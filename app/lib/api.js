@@ -23,5 +23,34 @@ export default {
 
   redirectToLogin() {
     return chrome.tabs.create({url: chrome.extension.getURL('settings.html')}); 
+  },
+
+  getOrganizations() {
+    return new Promise((resolve, reject) => {
+      Trello.rest('GET', 'members/me/organizations', (orgs) => {
+        resolve(orgs)
+      }, reject);
+    })
+  },
+
+  getBoards() {
+    return new Promise((resolve, reject) => {
+      let options = { filter: 'open', lists: 'open' }
+      Trello.rest('GET', 'members/me/boards', options, (boards) => {
+        resolve(boards);
+      }, reject);
+    })
+  },
+
+  createCard(data) {
+    return new Promise((resolve, reject) => {
+      Trello.rest('POST', 'cards', {
+        name: data['title'],
+        desc: data['description'],
+        date: null,
+        idList: data['id_list'],
+        urlSource: null
+      }, resolve, reject);
+    })
   }
 }
