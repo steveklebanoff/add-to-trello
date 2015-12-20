@@ -8,7 +8,12 @@ elixir.config.js.folder  = '';
 elixir.config.css.folder = '';
 
 elixir(function(mix) {
-    mix.browserify('app/index.js', 'dist/build.js');
+    mix.browserify('app/index.js', 'dist/js/build.js');
+
+    mix.scripts([
+      'node_modules/jquery/dist/jquery.js',
+      'app/lib/trello_client.js'
+    ], 'dist/js/vendor.js');
 
     mix.copy([
         'manifest.json',
@@ -17,9 +22,4 @@ elixir(function(mix) {
     ], 'dist');
 
     mix.copy('app/images', 'dist/images');
-
-    mix.scripts([
-      'node_modules/jquery/dist/jquery.js',
-      'app/lib/trello_client.js'
-    ], 'dist/vendor.js')
 });

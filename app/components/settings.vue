@@ -52,28 +52,21 @@ export default {
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import '../shared';
 
-.container {
-  max-width: 850px;
-}
+.c-settings {
+  .container {
+    max-width: 850px;
+  }
 
-.form-group {
-  margin-bottom: 20px;
-}
+  .sub_header {
+    font-size: 21px;
+    border-bottom: 1px solid #d6dadc;
+    padding: 8px 0;
+    position: relative;
+    font-weight: bold;
+  }
 
-input, textarea, select {
-  box-shadow: 0 1px 2px rgba(0,0,0,.23) !important;
-  border: 0 !important;
-}
-
-.sub_header {
-  font-size: 21px;
-  border-bottom: 1px solid #d6dadc;
-  padding: 8px 0;
-  position: relative;
-  font-weight: bold;
-}
-
-.sub_description {
-  margin: 8px 0 30px 0;
+  .sub_description {
+    margin: 8px 0 30px 0;
+  }
 }
 </style>
