@@ -8,9 +8,9 @@
         "default_title": "Add Cards to Trello"
     },
     "icons": {
-        "16": "assets/images/icon16.png",
-        "48": "assets/images/icon48.png",
-        "128": "assets/images/icon128.png"
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
     },
     "permissions": [
         "tabs",
@@ -18,5 +18,6 @@
     ],
     "web_accessible_resources": [
         "settings.html"
-    ]
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

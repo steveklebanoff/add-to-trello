@@ -1,0 +1,12 @@
+.btn--green {
+  background: linear-gradient(to bottom, #70b500 0, #64a200 100%);
+  box-shadow: 0 1px 0 #4d4d4d;
+  color: #fff!important;
+  padding: 5px 20px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.btn--green:hover {
+  background: linear-gradient(to bottom, #64a200 0, #578c00 100%);
+}

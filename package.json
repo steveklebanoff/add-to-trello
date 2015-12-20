@@ -1,0 +1,37 @@
+{
+  "name": "add-to-trello",
+  "version": "1.0.0",
+  "description": "Easily add cards to Trello",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/walteranderson/add-to-trello.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/walteranderson/add-to-trello/issues"
+  },
+  "homepage": "https://github.com/walteranderson/add-to-trello#readme",
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-runtime": "^5.8.34",
+    "gulp": "^3.9.0",
+    "laravel-elixir": "^4.1.1",
+    "laravel-elixir-vueify": "^1.0.1",
+    "node-sass": "^3.4.2",
+    "vue-hot-reload-api": "^1.2.2",
+    "vueify": "^8.0.0",
+    "vueify-insert-css": "^1.0.0"
+  },
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "jquery": "^2.1.4",
+    "vue": "^1.0.12"
+  }
+}
