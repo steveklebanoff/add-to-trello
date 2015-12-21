@@ -48,7 +48,7 @@ export default {
         name: data['title'],
         desc: data['description'],
         date: null,
-        idList: data['id_list'],
+        idList: data['list_id'],
         urlSource: null
       }, resolve, reject);
     })
