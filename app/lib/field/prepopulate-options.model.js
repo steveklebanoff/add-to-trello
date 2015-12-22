@@ -1,9 +1,9 @@
 const AVAILABLE_TYPES = [
-  { name: 'text', display_name: 'Text' },
-  { name: 'chrome:title', display_name: 'Page Title' },
-  { name: 'chrome:url', display_name: 'Page URL' },
-  { name: 'select:last_used', display_name: 'Last Used' },
-  { name: 'select:choose', display_name: 'Choose' }
+  { name: 'Text', value: 'text' },
+  { name: 'Page Title', value: 'chrome:title' },
+  { name: 'Page URL', value: 'chrome:url' },
+  { name: 'Last Used', value: 'select:last_used' },
+  { name: 'Choose', value: 'select:choose' }
 ]
 
 /**
