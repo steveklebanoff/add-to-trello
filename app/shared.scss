@@ -1,3 +1,9 @@
+@import '../node_modules/css-toggle-switch/dist/toggle-switch';
+
+.switch-light a {
+  outline: 0 !important;
+}
+
 .btn--green {
   background: linear-gradient(to bottom, #70b500 0, #64a200 100%);
   box-shadow: 0 1px 0 #4d4d4d;
