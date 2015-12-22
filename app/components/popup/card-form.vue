@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import fieldService from '../../lib/field/field.service'
+
 export default {
 
   data() {
@@ -43,6 +45,7 @@ export default {
   },
 
   ready() {
+    console.log(fieldService.get())
   },
 
   methods: {

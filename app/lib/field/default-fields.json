@@ -1,0 +1,20 @@
+[
+  {
+    "name": "name",
+    "label": "Card Title",
+    "position": 0,
+    "display": true
+  },
+  {
+    "name": "desc",
+    "label": "Card Description",
+    "position": 1,
+    "display": true
+  },
+  {
+    "name": "pos",
+    "label": "Position",
+    "position": 2,
+    "display": true
+  }
+]

@@ -22,7 +22,8 @@ export default {
   },
 
   redirectToLogin() {
-    return chrome.tabs.create({url: chrome.extension.getURL('settings.html')}); 
+    let url = chrome.extension.getURL('settings.html')
+    return chrome.tabs.create({ url })
   },
 
   getOrganizations() {
