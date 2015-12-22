@@ -13,6 +13,10 @@ export default {
     return this.setDefault()
   },
 
+  save(fields) {
+    return storage.set('fields', fields)
+  },
+
   hasCached() {
     return !! storage.get('fields')
   },
