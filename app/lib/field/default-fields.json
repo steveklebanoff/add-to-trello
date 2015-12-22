@@ -2,19 +2,52 @@
   {
     "name": "name",
     "label": "Card Title",
+    "type": "text",
     "position": 0,
-    "display": true
+    "display": true,
+    "prepopulate_options": {
+      "type": "chrome:title"
+    }
   },
   {
     "name": "desc",
     "label": "Card Description",
+    "type": "textarea",
     "position": 1,
-    "display": true
+    "display": true,
+    "prepopulate_options": {
+      "type": "chrome:url"
+    }
   },
   {
     "name": "pos",
     "label": "Position",
+    "type": "text",
     "position": 2,
-    "display": true
+    "display": true,
+    "prepopulate_options": {
+      "type": "text",
+      "value": "bottom"
+    }
+  },
+  {
+    "name": "board",
+    "label": "Board",
+    "type": "select",
+    "position": 3,
+    "display": true,
+    "prepopulate_options": {
+      "type": "select:last_used"
+    }
+  },
+  {
+    "name": "isList",
+    "label": "List",
+    "type": "select",
+    "position": 4,
+    "display": true,
+    "prepopulate_options": {
+      "type": "select:last_used"
+    }
   }
 ]
