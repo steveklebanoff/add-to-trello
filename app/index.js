@@ -1,5 +1,7 @@
 const Vue = require('vue')
 
+Vue.use(require('vue-dnd'))
+Vue.config.debug = true
 
 new Vue({
   el: 'body',

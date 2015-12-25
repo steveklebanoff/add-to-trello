@@ -9,7 +9,9 @@ import defaultFields from './default-fields.json'
 export default {
 
   get() {
-    if (this.hasCached()) return this.fromCache()
+    if (this.hasCached()) {
+      return this.fromCache()
+    }
     return this.setDefault()
   },
 

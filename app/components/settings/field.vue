@@ -13,10 +13,7 @@
 
 <script>
 export default {
-  props: ['field'],
-
-  methods: {
-  }
+  props: ['field']
 }
 </script>
 
