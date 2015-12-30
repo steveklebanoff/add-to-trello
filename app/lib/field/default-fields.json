@@ -21,7 +21,7 @@
     "name": "pos",
     "label": "Position",
     "type": "text",
-    "display": true,
+    "display": false,
     "prepopulate_options": {
       "type": "text",
       "value": "bottom"

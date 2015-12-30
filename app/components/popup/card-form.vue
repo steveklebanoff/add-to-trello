@@ -3,15 +3,14 @@
   <div class="form-group c-card__title">
     <label>Card Title</label>
     <input type="text"
-           class="form-control"
-           v-model="card.title"
-           autofocus>
+      class="form-control"
+      v-model="card.title"
+      autofocus>
   </div>
 
   <div class="form-group c-card__description">
     <label>Card Description</label>
-    <textarea
-      class="form-control"
+    <textarea class="form-control"
       v-model="card.description"
       rows="5"></textarea>
   </div>
@@ -24,7 +23,7 @@
   <div class="form-group c-card__lists">
     <label>List</label>
     <select class="form-control"
-            v-model="card.list_id"></select>
+      v-model="card.list_id"></select>
   </div>
 
   <div class="form-group c-card__submit">
