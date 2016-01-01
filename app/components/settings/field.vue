@@ -1,5 +1,6 @@
 <template>
 <div class="c-field">
+  <pre>{{ field | json }}</pre>
 
   <div class="c-field__subheading">
     <label class="switch-light switch-material  c-field__display">
@@ -12,26 +13,61 @@
 
   <div class="c-field__options form-group">
     <label class="small">Prepopulate field with:</label>
-    <select name="prepopulate_options" class="form-control">
-      <option v-for="option in availableTypes"
-              value="{{ option.value }}">
+    <select name="prepopulate_options" class="form-control" v-model="field.options.value" @change="optionCallback">
+      <option v-for="option in availableOptions"
+              v-if="optionIsAllowed(option)"
+              :value="option.value">
         {{ option.name }}
       </option>
     </select>
+  </div>
+
+  <div class="c-field__options form-group" v-show="isTextField" transition="expand">
+    <input type="text"
+           class="form-control"
+           placeholder="Add some default text to this field..."
+           v-model="field.options.text">
+  </div>
+
+  <div class="c-field__options form-group" v-show="isChooseLocation" transition="expand">
+    <!-- <trello-location-dropdown type="{{ field.name }}"></trello-location-dropdown> -->
   </div>
 
 </div>
 </template>
 
 <script>
-import prepopulateOptions from '../../lib/field/prepopulate-options.model'
+import FieldOptions from '../../lib/field/field-options.model'
+import _ from 'lodash'
 
 export default {
   props: ['field'],
 
   data() {
     return {
-      availableTypes: prepopulateOptions.availableTypes()
+      availableOptions: FieldOptions.available()
+    }
+  },
+
+  computed: {
+    isTextField() {
+      return this.field.options.value === 'text'
+    },
+
+    isChooseLocation() {
+      return this.field.options.value === 'select:choose'
+    }
+  },
+
+  methods: {
+    optionIsAllowed(option) {
+      return option.checkFieldPermissions(this.field)
+    },
+
+    optionCallback(e) {
+      let options = FieldOptions.get(e.target.value)
+      options.text = this.field.options.text
+      this.field.options = _.assign(this.field.options, options)
     }
   }
 }

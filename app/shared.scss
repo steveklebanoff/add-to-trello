@@ -25,3 +25,15 @@ input, textarea, select {
 .form-group {
   margin-bottom: 20px;
 }
+
+
+// VueJS Transitions
+
+.expand-transition {
+  transition: all .3s ease;
+}
+.expand-enter, .expand-leave {
+  height: 0;
+  padding: 0 10px;
+  opacity: 0;
+}

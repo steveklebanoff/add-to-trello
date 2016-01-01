@@ -4,8 +4,9 @@
     "label": "Card Title",
     "type": "text",
     "display": true,
-    "prepopulate_options": {
-      "type": "chrome:title"
+    "options": {
+      "name": "Page Title",
+      "value": "chrome:title"
     }
   },
   {
@@ -13,8 +14,9 @@
     "label": "Card Description",
     "type": "textarea",
     "display": true,
-    "prepopulate_options": {
-      "type": "chrome:url"
+    "options": {
+      "name": "Page URL",
+      "value": "chrome:url"
     }
   },
   {
@@ -22,9 +24,10 @@
     "label": "Position",
     "type": "text",
     "display": false,
-    "prepopulate_options": {
-      "type": "text",
-      "value": "bottom"
+    "options": {
+      "name": "Text",
+      "value": "text",
+      "text": "bottom"
     }
   },
   {
@@ -32,17 +35,19 @@
     "label": "Board",
     "type": "select",
     "display": true,
-    "prepopulate_options": {
-      "type": "select:last_used"
+    "options": {
+      "name": "Last Used",
+      "value": "select:last_used"
     }
   },
   {
-    "name": "isList",
+    "name": "list",
     "label": "List",
     "type": "select",
     "display": true,
-    "prepopulate_options": {
-      "type": "select:last_used"
+    "options": {
+      "name": "Last Used",
+      "value": "select:last_used"
     }
   }
 ]

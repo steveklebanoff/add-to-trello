@@ -6,7 +6,7 @@
 
 <script>
 import fieldService from '../../lib/field/field.service'
-import FieldView from './field.vue'
+import FieldView from './Field.vue'
 
 export default {
 

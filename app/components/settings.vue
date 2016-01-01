@@ -41,11 +41,11 @@
 </template>
 
 <script>
-import Jumbotron from './settings/jumbotron.vue'
-import AuthNotification from './settings/auth-notification.vue'
-import SettingsForm from './settings/settings-form.vue'
-import FieldsForm from './settings/fields-form.vue'
-import FooterLinks from './settings/footer-links.vue'
+import Jumbotron from './settings/Jumbotron.vue'
+import AuthNotification from './settings/AuthNotification.vue'
+import SettingsForm from './settings/SettingsForm.vue'
+import FieldsForm from './settings/FieldsForm.vue'
+import FooterLinks from './settings/FooterLinks.vue'
 
 export default {
 

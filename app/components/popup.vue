@@ -19,7 +19,7 @@
 
 <script>
 import Api from '../lib/api'
-import CardForm from './popup/card-form.vue'
+import CardForm from './popup/CardForm.vue'
 
 export default {
 
