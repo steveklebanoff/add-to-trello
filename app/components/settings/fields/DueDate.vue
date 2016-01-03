@@ -15,7 +15,7 @@
     <select name="prepopulate_options"
             class="form-control"
             v-model="field.prefillOptions.type"
-            @change="optionCallback">
+            @change="prefillOptionHasChanged">
 
       <option v-for="option in availablePrefillOptions"
               v-if="optionIsAllowed(option)"

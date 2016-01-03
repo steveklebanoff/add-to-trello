@@ -1,5 +1,6 @@
 <template>
 <div class="c-fields-form">
+  <button class="btn btn-primary" @click="save">Save</button>
   <template v-for="field in fields">
     <component
       :is="field.component"
@@ -12,6 +13,7 @@
 
 <script>
 import fieldService from '../../lib/field/field.service'
+
 import Title from './fields/Title.vue'
 import Description from './fields/Description.vue'
 import DueDate from './fields/DueDate.vue'
@@ -36,9 +38,10 @@ export default {
 
   methods: {
     save() {
-
-      // fieldService.save(this.fields)
-      // noty('successful save notification')
+      if (fieldService.save(this.fields)) {
+        console.log('saved!!!!!!');
+        // noty('successful save notification')
+      }
     }
   }
 }
