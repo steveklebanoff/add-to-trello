@@ -27,7 +27,15 @@
   </div>
 
   <div class="c-field__options form-group" v-show="chooseList" transition="expand">
-    <select name="boards" class="form-control" v-model="field.prefillOptions.value">
+    <div class="alert alert-danger" v-show="!boardId" transition="expand">
+      <p>You must selected a board before you can choose a list.</p> 
+    </div>
+
+    <select name="boards"
+            class="form-control"
+            v-model="field.prefillOptions.value"
+            v-show="boardId"
+            transition="expand">
       <option value="">Select a List</option>
     </select>
   </div>
@@ -40,10 +48,20 @@ import fieldMixin from './field.mixin'
 export default {
   mixins: [fieldMixin],
 
+  data() {
+    return {
+      boardId: false
+    }
+  },
+
   computed: {
     chooseList() {
       return this.field.prefillOptions.type === 'select:choose'
     }
+  },
+
+  events: {
+    'board.updated': function(boardId) { this.boardId = boardId }
   }
 }
 </script>

@@ -37,6 +37,12 @@ export default {
     'list': List
   },
 
+  events: {
+    'board.updated': function(id) {
+      this.$broadcast('board.updated', id)
+    }
+  },
+
   methods: {
     save() {
       if (fieldService.save(this.fields)) {

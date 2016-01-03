@@ -67,14 +67,12 @@ export default {
   methods: {
     prefillOptionCallback() {
       if (this.field.prefillOptions.type !== 'select:choose') {
-        // eventEmitter.emit('board.removed')
-        // console.log('emitting board.removed');
+        this.$dispatch('board.updated')
       }
     },
 
     boardHasChanged(e) {
-      // eventEmitter.emit('board.selected', e.target.value)
-      // console.log('emitting board.selected');
+      this.$dispatch('board.updated', e.target.value)
     }
   }
 }
