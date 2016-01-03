@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import chromeService from '../chrome/chrome.service'
 
 const AVAILABLE_OPTIONS = [
   { label: 'Nothing', type: 'nothing', allowedFields: ['text', 'textarea', 'date', 'select'] },
@@ -17,13 +18,40 @@ export default class PrefillOptions {
     this.value = value
   }
 
+  /**
+   * Return an array of available prefill types
+   */
   static available () {
     return _.map(AVAILABLE_OPTIONS, (opt) => new PrefillOptions(opt))
   }
 
+  /**
+   * Create a new instance of PrefillOptions based on the given type
+   */
   static createFromType(type) {
     return new PrefillOptions(
       _.find(AVAILABLE_OPTIONS, (opt) => opt.type === type)
     )
+  }
+
+  /**
+   * Based on the prefill type, return the appropriate value for this field.
+   */
+  getPrefillValue(callback) {
+    switch(this.type) {
+      case 'nothing':
+        return callback('')
+
+      case 'chrome:page_title':
+        return chromeService.getCurrentTab((tab) => callback(tab.title))
+
+      case 'chrome:page_url':
+        return chromeService.getCurrentTab((tab) => callback(tab.url))
+
+      case 'select:last_used':
+      case 'text':
+      case 'select:choose':
+        return callback(this.value)
+    }
   }
 }

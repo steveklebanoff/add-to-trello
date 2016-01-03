@@ -1,56 +1,60 @@
 <template>
 <form class="c-card">
-  <div class="form-group c-card__title">
-    <label>Card Title</label>
-    <input type="text"
-      class="form-control"
-      v-model="card.title"
-      autofocus>
-  </div>
+  <template v-for="field in fields">
+    <component
+      :is="field.component"
+      :field="field"
+      v-if="displayField(field)">
+    </component>
+  </template>
 
-  <div class="form-group c-card__description">
-    <label>Card Description</label>
-    <textarea class="form-control"
-      v-model="card.description"
-      rows="5"></textarea>
-  </div>
-
-  <div class="form-group c-card__boards">
-    <label>Board</label>
-    <select class="form-control"></select>
-  </div>
-
-  <div class="form-group c-card__lists">
-    <label>List</label>
-    <select class="form-control"
-      v-model="card.list_id"></select>
-  </div>
-
-  <div class="form-group c-card__submit">
-    <button type="submit" class="btn btn--green">Add</button>
+  <div class="form-group">
+    <button type="button" class="btn btn--green" @click="save">Save</button>
   </div>
 </form>
 </template>
 
 <script>
+import _ from 'lodash'
+import fieldService from '../../lib/field/field.service'
+
+import Board from './fields/Board.vue'
+import List from './fields/List.vue'
+import Title from './fields/Title.vue'
+import Description from './fields/Description.vue'
+import DueDate from './fields/DueDate.vue'
+
 export default {
 
   data() {
     return {
-      card: { title: '', description: '', list_id: '' }
+      fields: fieldService.get(),
+      form: {}
     }
   },
 
-  ready() {
-    //
+  components: {
+    'title': Title,
+    'description': Description,
+    'due-date': DueDate,
+    'board': Board,
+    'list': List
+  },
+
+  events: {
+    'form.update': function(val) {
+      this.form = _.assign(this.form, val)
+    }
   },
 
   methods: {
-    getCurrentTab(callback) {
-      let queryInfo = { active: true, currentWindow: true }
-      chrome.tabs.query(queryInfo, (tabs) => {
-        callback(tabs[0])
-      });
+    save() {
+      // make ajax request to Trello with new card info
+      console.log(this.form);
+    },
+
+    displayField(field) {
+      return field.display === true
     }
   }
 

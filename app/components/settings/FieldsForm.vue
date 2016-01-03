@@ -15,6 +15,7 @@ import _ from 'lodash'
 
 import sortableMixin from './fields/sortable.mixin'
 import fieldService from '../../lib/field/field.service'
+
 import Title from './fields/Title.vue'
 import Description from './fields/Description.vue'
 import DueDate from './fields/DueDate.vue'
