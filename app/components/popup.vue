@@ -36,6 +36,7 @@ export default {
 
 <style lang="scss">
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3';
 
 .c-popup {
   min-width: 320px;

@@ -30,6 +30,7 @@
     "vueify-insert-css": "^1.0.0"
   },
   "dependencies": {
+    "bootstrap-datepicker": "^1.5.1",
     "bootstrap-sass": "^3.3.6",
     "css-toggle-switch": "^4.0.2",
     "jquery": "^2.1.4",

@@ -15,6 +15,7 @@ elixir(function(mix) {
     mix.scripts([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+      'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
       'app/lib/trello/trello.client.min.js'
     ], 'dist/js/vendor.js');
 
