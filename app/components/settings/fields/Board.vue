@@ -1,5 +1,5 @@
 <template>
-<div class="c-field">
+<div class="c-field" :data-id="field.position">
 
   <div class="c-field__subheading">
     <label class="switch-light switch-material  c-field__display">

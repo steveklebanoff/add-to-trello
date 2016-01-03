@@ -11,7 +11,7 @@ import PrefillOptions from '../../../lib/field/prefillOptions.model'
       availablePrefillOptions: PrefillOptions.available()
     }
   },
-
+  
   methods: {
     optionIsAllowed(option) {
       return option.allowedFields.indexOf(this.field.inputType) !== -1

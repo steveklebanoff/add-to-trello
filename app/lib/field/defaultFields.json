@@ -3,6 +3,7 @@
     "component": "title",
     "label": "Card Title",
     "inputType": "text",
+    "position": 0,
     "trelloField": "name",
     "display": true,
     "prefillOptions": {
@@ -16,6 +17,7 @@
     "component": "description",
     "label": "Card Description",
     "inputType": "textarea",
+    "position": 1,
     "trelloField": "desc",
     "display": true,
     "prefillOptions": {
@@ -29,6 +31,7 @@
     "component": "due-date",
     "label": "Due Date",
     "inputType": "date",
+    "position": 2,
     "trelloField": "due",
     "display": true,
     "prefillOptions": {
@@ -42,6 +45,7 @@
     "component": "board",
     "label": "Board",
     "inputType": "select",
+    "position": 3,
     "trelloField": "",
     "display": true,
     "prefillOptions": {
@@ -55,6 +59,7 @@
     "component": "list",
     "label": "List",
     "inputType": "select",
+    "position": 4,
     "trelloField": "list",
     "display": true,
     "prefillOptions": {
