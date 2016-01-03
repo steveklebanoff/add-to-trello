@@ -1,6 +1,5 @@
 <template>
 <div class="c-field">
-  <pre>{{ field | json }}</pre>
 
   <div class="c-field__subheading">
     <label class="switch-light switch-material  c-field__display">

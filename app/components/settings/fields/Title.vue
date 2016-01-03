@@ -1,5 +1,6 @@
 <template>
 <div class="c-field">
+
   <div class="c-field__subheading">
     <label class="switch-light switch-material  c-field__display">
       <input type="checkbox" v-model="field.display">
