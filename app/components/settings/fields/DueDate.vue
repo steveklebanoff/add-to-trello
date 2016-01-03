@@ -31,7 +31,7 @@
         <input type="text"
                class="form-control"
                placeholder="Add some default text to this field..."
-               v-model="field.prefillOptions.text">
+               v-model="field.prefillOptions.value">
       </div>
   </template>
 
@@ -43,34 +43,14 @@
 </template>
 
 <script>
-import PrefillOptions from '../../../lib/field/prefillOptions.model'
+import fieldMixin from './field.mixin'
 
 export default {
-  props: ['field', 'configure'],
-
-  data() {
-    return {
-      availablePrefillOptions: PrefillOptions.available()
-    }
-  },
+  mixins: [fieldMixin],
 
   computed: {
-    isConfiguration() {
-      return !! this.configure
-    },
-
     isTextField() {
       return this.field.prefillOptions.type === 'text'
-    }
-  },
-
-  methods: {
-    optionCallback(e) {
-      this.field.prefillOptions = PrefillOptions.createFromType(e.target.value)
-    },
-
-    optionIsAllowed(option) {
-      return option.allowedFields.indexOf(this.field.inputType) !== -1
     }
   }
 }

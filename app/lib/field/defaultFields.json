@@ -9,7 +9,7 @@
       "label": "Page Title",
       "type": "chrome:page_title",
       "allowedFields": ["text", "textarea"],
-      "text": ""
+      "value": ""
     }
   },
   {
@@ -22,7 +22,7 @@
       "label": "Page Url",
       "type": "chrome:page_url",
       "allowedFields": ["text", "textarea"],
-      "text": ""
+      "value": ""
     }
   },
   {
@@ -35,7 +35,7 @@
       "label": "Nothing",
       "type": "nothing",
       "allowedFields": ["text", "textarea", "date", "select"],
-      "text": ""
+      "value": ""
     }
   },
   {
@@ -48,7 +48,7 @@
       "label": "Last Used",
       "type": "select:last_used",
       "allowedFields": ["select"],
-      "text": ""
+      "value": ""
     }
   },
   {
@@ -61,7 +61,7 @@
       "label": "Last Used",
       "type": "select:last_used",
       "allowedFields": ["select"],
-      "text": ""
+      "value": ""
     }
   }
 ]

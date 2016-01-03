@@ -28,10 +28,7 @@
       </div>
 
       <div class="c-field__options form-group" v-show="chooseList" transition="expand">
-        <div class="alert alert-danger" v-if="! selectedBoard">
-          You need to select a board to use before you can choose a list.
-        </div>
-        <select name="boards" class="form-control" v-model="field.prefillOptions.text" v-if="selectedBoard">
+        <select name="boards" class="form-control" v-model="field.prefillOptions.value">
           <option value="">Select a List</option>
         </select>
       </div>
@@ -45,48 +42,14 @@
 </template>
 
 <script>
-import PrefillOptions from '../../../lib/field/prefillOptions.model'
+import fieldMixin from './field.mixin'
 
 export default {
-  props: ['field', 'configure'],
-
-  data() {
-    return {
-      availablePrefillOptions: PrefillOptions.available(),
-      selectedBoard: false
-    }
-  },
-
-  ready() {
-    // eventEmitter.on('board.selected', (boardId) => {
-    //   console.log('selected!');
-    //   this.selectedBoard = boardId
-    // })
-
-    // eventEmitter.on('board.removed', () => {
-    //   console.log('removed!');
-    //   this.selectedBoard = false
-    // })
-  },
+  mixins: [fieldMixin],
 
   computed: {
-    isConfiguration() {
-      return !! this.configure
-    },
-
     chooseList() {
       return this.field.prefillOptions.type === 'select:choose'
-    }
-
-  },
-
-  methods: {
-    optionCallback(e) {
-      this.field.prefillOptions = PrefillOptions.createFromType(e.target.value)
-    },
-
-    optionIsAllowed(option) {
-      return option.allowedFields.indexOf(this.field.inputType) !== -1
     }
   }
 }
