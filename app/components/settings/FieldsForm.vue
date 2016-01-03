@@ -13,6 +13,7 @@
 
 <script>
 import fieldService from '../../lib/field/field.service'
+import noty from 'noty'
 
 import Title from './fields/Title.vue'
 import Description from './fields/Description.vue'
@@ -39,8 +40,17 @@ export default {
   methods: {
     save() {
       if (fieldService.save(this.fields)) {
-        console.log('saved!!!!!!');
-        // noty('successful save notification')
+        noty({
+          text: 'Save was successful!',
+          theme: 'bootstrapTheme',
+          layout: 'topRight',
+          type: 'success',
+          timeout: 2000,
+          animation: {
+            open: { height: 'toggle' },
+            close: { height: 'toggle' }
+          }
+        })
       }
     }
   }
