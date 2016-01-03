@@ -30,15 +30,16 @@
   </div>
 
   <div class="c-field__options form-group" v-show="isChooseLocation" transition="expand">
-    <!-- <trello-location-dropdown type="{{ field.name }}"></trello-location-dropdown> -->
+    <trello-dropdown :type="field.name"></trello-dropdown>
   </div>
 
 </div>
 </template>
 
 <script>
-import FieldOptions from '../../lib/field/field-options.model'
 import _ from 'lodash'
+import FieldOptions from '../../lib/field/prefillOptions.model'
+import TrelloDropdown from './TrelloDropdown.vue'
 
 export default {
   props: ['field'],
@@ -47,6 +48,10 @@ export default {
     return {
       availableOptions: FieldOptions.available()
     }
+  },
+
+  components: {
+    'trello-dropdown': TrelloDropdown
   },
 
   computed: {

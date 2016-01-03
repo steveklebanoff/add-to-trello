@@ -1,7 +1,7 @@
 import storage from 'local-storage'
 import _ from 'lodash'
 import Field from './field.model'
-import defaultFields from './default-fields.json'
+import defaultFields from './defaultFields.json'
 
 /**
  * Field Service
@@ -9,9 +9,9 @@ import defaultFields from './default-fields.json'
 export default {
 
   get() {
-    if (this.hasCached()) {
-      return this.fromCache()
-    }
+    // if (this.hasCached()) {
+    //   return this.fromCache()
+    // }
     return this.setDefault()
   },
 
@@ -25,12 +25,12 @@ export default {
 
   fromCache() {
     let cached = storage.get('fields')
-    if (!cached) return false
+    if (!cached) return this.setDefault()
     return this.hydrate(cached)
   },
 
   setDefault() {
-    storage.set(defaultFields)
+    storage.set('fields', defaultFields)
     return this.hydrate(defaultFields)
   },
 

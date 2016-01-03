@@ -1,14 +1,15 @@
-import FieldOptions from './field-options.model'
+import PrefillOptions from './prefillOptions.model'
 
 /**
  * Field Model
  */
 export default class Field {
-  constructor ({ name, label, type, display, options }) {
-    this.name = name
+  constructor ({ component, label, inputType, trelloField, display, prefillOptions }) {
+    this.component = component
     this.label = label
-    this.type = type
+    this.inputType = inputType
+    this.trelloField = trelloField
     this.display = display
-    this.options = new FieldOptions(options)
+    this.prefillOptions = new PrefillOptions(prefillOptions)
   }
 }

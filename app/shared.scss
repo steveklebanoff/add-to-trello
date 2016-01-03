@@ -37,3 +37,27 @@ input, textarea, select {
   padding: 0 10px;
   opacity: 0;
 }
+
+
+.c-field {
+  background-color: #edeff0;
+  padding: 15px;
+  width: 50%;
+  margin: auto;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+.c-field__subheading {
+  margin-bottom: 15px;
+}
+
+.c-field__display {
+  cursor: pointer;
+  float: left;
+}
+
+.c-field__label {
+  margin: 3px 10px;
+}
