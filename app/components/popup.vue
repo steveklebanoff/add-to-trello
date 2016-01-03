@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import Api from '../lib/api'
+import Api from '../lib/trello/api'
 import CardForm from './popup/CardForm.vue'
 
 export default {

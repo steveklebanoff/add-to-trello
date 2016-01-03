@@ -37,6 +37,9 @@
             v-show="boardId"
             transition="expand">
       <option value="">Select a List</option>
+      <option v-for="list in listDropdown" :value="list.id">
+        {{ list.name }}
+      </option>
     </select>
   </div>
 </div>
@@ -44,15 +47,24 @@
 
 <script>
 import fieldMixin from './field.mixin'
+import TrelloService from '../../../lib/trello/trello.service'
 
 export default {
   mixins: [fieldMixin],
 
   data() {
     return {
-      boardId: false
+      boardId: false,
+      listDropdown: []
     }
   },
+
+  ready() {
+    if (this.boardId) {
+      this.setListDropdown()
+    }
+  },
+
 
   computed: {
     chooseList() {
@@ -61,7 +73,18 @@ export default {
   },
 
   events: {
-    'board.updated': function(boardId) { this.boardId = boardId }
+    'board.updated': function(boardId) {
+      this.boardId = boardId
+      this.setListDropdown()
+    }
+  },
+
+  methods: {
+    setListDropdown() {
+      TrelloService.getListDropdown(this.boardId, (dropdown) => {
+        this.$set('listDropdown', dropdown)
+      })
+    }
   }
 }
 </script>

@@ -15,7 +15,7 @@ elixir(function(mix) {
     mix.scripts([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
-      'app/lib/trello.client.min.js'
+      'app/lib/trello/trello.client.min.js'
     ], 'dist/js/vendor.js');
 
     mix.copy([

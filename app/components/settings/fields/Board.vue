@@ -41,7 +41,7 @@
 
 <script>
 import fieldMixin from './field.mixin'
-import TrelloService from '../../../lib/trello.service'
+import TrelloService from '../../../lib/trello/trello.service'
 
 export default {
   mixins: [fieldMixin],
