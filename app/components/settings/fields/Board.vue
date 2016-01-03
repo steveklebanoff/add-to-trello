@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import storage from 'local-storage'
-import PrefillOptions from '../../lib/field/prefillOptions.model'
-import TrelloService from '../../lib/trello.service'
+// import eventEmitter from 'nano-event-emitter'
+import PrefillOptions from '../../../lib/field/prefillOptions.model'
+import TrelloService from '../../../lib/trello.service'
 
 export default {
   props: ['field', 'configure'],
@@ -82,7 +82,8 @@ export default {
       this.field.prefillOptions = PrefillOptions.createFromType(e.target.value)
 
       if (this.field.prefillOptions.type !== 'select:choose') {
-        storage.remove('selectedBoard')
+        // eventEmitter.emit('board.removed')
+        // console.log('emitting board.removed');
       }
     },
 
@@ -91,12 +92,13 @@ export default {
     },
 
     boardHasChanged(e) {
-      storage.set('selectedBoard', e.target.value)
+      // eventEmitter.emit('board.selected', e.target.value)
+      // console.log('emitting board.selected');
     }
   }
 }
 </script>
 
 <style lang="scss">
-@import '../../shared';
+@import '../../../shared';
 </style>

@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import PrefillOptions from '../../lib/field/prefillOptions.model'
+import PrefillOptions from '../../../lib/field/prefillOptions.model'
 
 export default {
   props: ['field', 'configure'],
@@ -77,5 +77,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../shared';
+@import '../../../shared';
 </style>

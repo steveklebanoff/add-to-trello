@@ -1,6 +1,5 @@
 <template>
 <div class="c-field">
-  <pre>{{ field | json }}</pre>
 
   <template v-if="isConfiguration">
       <div class="c-field__subheading">
@@ -29,10 +28,10 @@
       </div>
 
       <div class="c-field__options form-group" v-show="chooseList" transition="expand">
-        <div class="alert alert-danger" v-if="! hasSelectedBoard">
+        <div class="alert alert-danger" v-if="! selectedBoard">
           You need to select a board to use before you can choose a list.
         </div>
-        <select name="boards" class="form-control" v-model="field.prefillOptions.text" v-if="hasSelectedBoard">
+        <select name="boards" class="form-control" v-model="field.prefillOptions.text" v-if="selectedBoard">
           <option value="">Select a List</option>
         </select>
       </div>
@@ -46,16 +45,28 @@
 </template>
 
 <script>
-import storage from 'local-storage'
-import PrefillOptions from '../../lib/field/prefillOptions.model'
+import PrefillOptions from '../../../lib/field/prefillOptions.model'
 
 export default {
   props: ['field', 'configure'],
 
   data() {
     return {
-      availablePrefillOptions: PrefillOptions.available()
+      availablePrefillOptions: PrefillOptions.available(),
+      selectedBoard: false
     }
+  },
+
+  ready() {
+    // eventEmitter.on('board.selected', (boardId) => {
+    //   console.log('selected!');
+    //   this.selectedBoard = boardId
+    // })
+
+    // eventEmitter.on('board.removed', () => {
+    //   console.log('removed!');
+    //   this.selectedBoard = false
+    // })
   },
 
   computed: {
@@ -65,11 +76,8 @@ export default {
 
     chooseList() {
       return this.field.prefillOptions.type === 'select:choose'
-    },
-
-    hasSelectedBoard() {
-      return storage.get('selectedBoard')
     }
+
   },
 
   methods: {
@@ -85,5 +93,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../shared';
+@import '../../../shared';
 </style>
