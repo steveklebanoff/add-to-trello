@@ -28,11 +28,10 @@
 
   <div class="c-field__options form-group" v-show="chooseList" transition="expand">
     <div class="alert alert-danger" v-show="!boardId" transition="expand">
-      <p>You must selected a board before you can choose a list.</p> 
+      You must selected a board before you can choose a list.
     </div>
 
-    <select name="boards"
-            class="form-control"
+    <select class="form-control"
             v-model="field.prefillOptions.value"
             v-show="boardId"
             transition="expand">
@@ -91,4 +90,8 @@ export default {
 
 <style lang="scss">
 @import '../../../shared';
+
+.alert {
+  margin-bottom: 0;
+}
 </style>

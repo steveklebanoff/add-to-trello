@@ -17,6 +17,7 @@
 <script>
 import _ from 'lodash'
 import fieldService from '../../lib/field/field.service'
+import Api from '../../lib/trello/api'
 
 import Board from './fields/Board.vue'
 import List from './fields/List.vue'
@@ -44,13 +45,24 @@ export default {
   events: {
     'form.update': function(val) {
       this.form = _.assign(this.form, val)
-    }
+    },
+    'board.updated': function(id) {
+      this.$broadcast('board.updated', id)
+    },
   },
 
   methods: {
     save() {
+      Api.createCard(this.form)
+      .then((res) => {
+        console.log('success!');
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log('error!');
+        console.log(err);
+      })
       // make ajax request to Trello with new card info
-      console.log(this.form);
     },
 
     displayField(field) {

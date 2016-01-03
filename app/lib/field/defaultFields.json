@@ -60,7 +60,7 @@
     "label": "List",
     "inputType": "select",
     "position": 4,
-    "trelloField": "list",
+    "trelloField": "idList",
     "display": true,
     "prefillOptions": {
       "label": "Last Used",

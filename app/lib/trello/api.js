@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 const APP_KEY = '68fc29641c38d36e500e264a5c7e9ec0'
 
 Trello.setKey(APP_KEY);
@@ -45,13 +47,8 @@ export default {
 
   createCard(data) {
     return new Promise((resolve, reject) => {
-      Trello.rest('POST', 'cards', {
-        name: data['title'],
-        desc: data['description'],
-        date: null,
-        idList: data['list_id'],
-        urlSource: null
-      }, resolve, reject);
+      data = _.assign({ due: null, idList: null, urlSource: 'http://www.google.com' }, data)
+      Trello.rest('POST', 'cards', data, resolve, reject);
     })
   }
 }
