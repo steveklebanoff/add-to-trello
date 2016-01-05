@@ -26,4 +26,6 @@ elixir(function(mix) {
     ], 'dist');
 
     mix.copy('app/images', 'dist/images');
+
+    mix.copy('node_modules/bootstrap-sass/assets/fonts', 'dist/fonts');
 });
