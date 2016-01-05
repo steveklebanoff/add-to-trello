@@ -8,5 +8,10 @@ export default {
     chrome.tabs.query(queryInfo, (tabs) => {
       callback(tabs[0])
     });
+  },
+
+  openSettingsPage() {
+    let url = chrome.extension.getURL('settings.html')
+    return chrome.tabs.create({ url })
   }
 }

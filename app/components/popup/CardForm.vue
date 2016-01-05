@@ -62,7 +62,6 @@ export default {
         console.log('error!');
         console.log(err);
       })
-      // make ajax request to Trello with new card info
     },
 
     displayField(field) {

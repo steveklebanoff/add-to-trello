@@ -23,11 +23,6 @@ export default {
     return Trello.authorized()
   },
 
-  redirectToLogin() {
-    let url = chrome.extension.getURL('settings.html')
-    return chrome.tabs.create({ url })
-  },
-
   getOrganizations() {
     return new Promise((resolve, reject) => {
       Trello.rest('GET', 'members/me/organizations', (orgs) => {

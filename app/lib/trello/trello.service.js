@@ -33,7 +33,7 @@ export default {
             lists: board.lists
           })
         })
-        
+
         storage.set('boardsDropdown', dropdown)
         return callback(dropdown)
       })
@@ -50,7 +50,7 @@ export default {
       let listDropdown = _.filter(board.lists, (list) => {
         return list.closed === false
       })
-    
+
       callback(listDropdown)
     })
   }
