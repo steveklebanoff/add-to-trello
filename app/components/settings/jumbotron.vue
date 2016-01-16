@@ -10,7 +10,6 @@
 </template>
 
 <style lang="scss">
-@import '../../shared';
 
 .c-jumbotron {
   background-color: #edeff0;

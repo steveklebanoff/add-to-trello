@@ -1,6 +1,6 @@
 <template>
 <div class="c-fields-form">
-  <button @click="save" class="btn btn--green c-fields-form__save pull-right">Save</button>
+  <button @click="save" class="btn btn--green pull-right">Save</button>
   <h2>Trello Fields</h2>
   <template v-for="field in fields">
     <component
@@ -16,15 +16,11 @@
 
 .c-fields-form {
   width: 50%;
-  float: right;
+  margin: auto;
 
   h1 {
     font-family: $font-family;
   }
-}
-
-.c-fields-form__save {
-  margin-top: 20px;
 }
 
 .c-field {

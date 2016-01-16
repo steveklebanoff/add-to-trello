@@ -6,7 +6,7 @@
   <div class="container">
     <auth-notification></auth-notification>
 
-    <div class="row  c-settings__form-container" v-show="loggedIn">
+    <div class="row c-settings__form-container" v-show="loggedIn">
       <fields-form></fields-form>
     </div>
 
