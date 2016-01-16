@@ -20,11 +20,12 @@
 <script>
 import Api from '../lib/trello/api'
 import CardForm from './popup/CardForm.vue'
+import Chrome from '../lib/chrome/chrome.service'
 
 export default {
 
   ready() {
-    if (! Api.authorized()) return Api.redirectToLogin()
+    if (! Api.authorized()) return Chrome.openSettingsPage()
   },
 
   components: {
