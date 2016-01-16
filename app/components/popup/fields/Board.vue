@@ -28,7 +28,7 @@ export default {
 
   ready() {
     this.$dispatch('board.updated', this.field.prefillOptions.value)
-    
+
     TrelloService.getBoardsDropdown((dropdown) => {
       this.$set('boardsDropdown', dropdown)
     })
