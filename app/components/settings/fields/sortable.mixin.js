@@ -23,39 +23,8 @@ export default {
 
       this.sortable = SortableJs.create(el, {
         draggable: '.c-field',
-        // handle: '.fa',
         animation: 150,
         dataIdAttr: 'data-id',
-
-        // onStart: function() {
-        //   var comment = el.firstChild;
-
-        //   do {
-        //     if (comment.nodeType == 8) {
-        //       console.log(comment);
-        //       el.removeChild(comment);
-        //       el.appendChild(comment);
-        //     }
-        //   } while (comment = comment.nextSibling);
-        // },
-
-        /**
-         * Vue has shadowDOM comment Nodes,
-         * which we will move to the end.
-         */
-        // onEnd: function () {
-        //   var comment = el.firstChild;
-
-        //   do {
-        //     if (comment.nodeType == 8) {
-        //       console.log(comment);
-        //       el.removeChild(comment);
-        //       el.appendChild(comment);
-        //     }
-        //   } while (comment = comment.nextSibling);
-
-        //   self.$emit('ended-sorting', data);
-        // },
 
         /**
          * We track the position of the list item

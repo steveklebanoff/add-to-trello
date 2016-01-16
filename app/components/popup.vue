@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../shared';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import '../../node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3';
 

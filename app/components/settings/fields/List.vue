@@ -89,8 +89,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../shared';
-
 .alert {
   margin-bottom: 0;
 }
