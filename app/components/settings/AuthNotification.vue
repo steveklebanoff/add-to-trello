@@ -38,6 +38,7 @@ export default {
 
 <style lang="scss">
 .c-auth {
+  margin-bottom: 30px;
 }
 
   .c-auth__pending {

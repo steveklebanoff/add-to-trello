@@ -7,35 +7,10 @@
     <auth-notification></auth-notification>
 
     <div class="row  c-settings__form-container" v-show="loggedIn">
-
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
-          <a href="#fields" aria-controls="fields" role="tab" data-toggle="tab">Fields</a>
-        </li> 
-
-        <li role="presentation">
-          <a href="#preferences" aria-controls="preferences" role="tab" data-toggle="tab">Preferences</a>
-        </li> 
-      </ul>
-
-      <div class="tab-content c-settings__content">
-        <div role="tabpanel" class="tab-pane active" id="fields">
-          <fields-form></fields-form>
-        </div>
-
-        <div role="tabpanel" class="tab-pane" id="preferences">
-          <div class="sub_description">
-            Use these settings to adjust the fields in the popup window.
-          </div>
-          <settings-form></settings-form>
-        </div>
-
-      </div>
-
+      <fields-form></fields-form>
     </div>
 
     <footer-links></footer-links>
-
   </div>
 </div>
 </template>
@@ -43,7 +18,6 @@
 <script>
 import Jumbotron from './settings/Jumbotron.vue'
 import AuthNotification from './settings/AuthNotification.vue'
-import SettingsForm from './settings/SettingsForm.vue'
 import FieldsForm from './settings/FieldsForm.vue'
 import FooterLinks from './settings/FooterLinks.vue'
 
@@ -64,7 +38,6 @@ export default {
   components: {
     'jumbotron':         Jumbotron,
     'auth-notification': AuthNotification,
-    'settings-form':     SettingsForm,
     'fields-form':       FieldsForm,
     'footer-links':      FooterLinks
   }
