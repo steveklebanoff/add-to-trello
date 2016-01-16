@@ -10,9 +10,12 @@
 </template>
 
 <style lang="scss">
+@import '../../shared';
+
 .c-jumbotron {
   background-color: #edeff0;
   border-bottom: 1px solid #d6dadc;
+  margin-bottom: 8px;
 }
 
   .c-jumbotron__container {
@@ -24,6 +27,7 @@
   }
 
   .c-jumbotron__text {
+    font-family: 'Open Sans';
     font-size: 40px;
     line-height: 1;
     font-weight: 200;

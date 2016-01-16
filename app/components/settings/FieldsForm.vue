@@ -1,5 +1,7 @@
 <template>
 <div class="c-fields-form">
+  <button @click="save" class="btn btn--green c-fields-form__save pull-right">Save</button>
+  <h2>Trello Fields</h2>
   <template v-for="field in fields">
     <component
       :is="field.component"
@@ -8,6 +10,45 @@
   </template>
 </div>
 </template>
+
+<style lang="scss">
+@import '../../shared';
+
+.c-fields-form {
+  width: 50%;
+  float: right;
+
+  h1 {
+    font-family: $font-family;
+  }
+}
+
+.c-fields-form__save {
+  margin-top: 20px;
+}
+
+.c-field {
+  background-color: #edeff0;
+  padding: 15px;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.c-field__subheading {
+  margin-bottom: 15px;
+}
+
+.c-field__display {
+  cursor: pointer;
+  float: left;
+}
+
+.c-field__label {
+  margin: 3px 10px;
+}
+</style>
 
 <script>
 import noty from 'noty'
@@ -51,16 +92,6 @@ export default {
       for (var i = 0; i < this.fields.length; i++) {
         this.fields[i].position = i
       }
-    }
-  },
-
-  watch: {
-    fields: {
-      deep: true,
-      // debounce the save handler so we don't save too many times in a row
-      handler: _.debounce(function() {
-        this.save()
-      }, 250)
     }
   },
 

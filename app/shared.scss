@@ -1,4 +1,10 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Lato);
+$font-family: 'Open Sans';
+
+
 @import '../node_modules/css-toggle-switch/dist/toggle-switch';
+
 
 .switch-light a {
   outline: 0 !important;
@@ -36,29 +42,4 @@ input, textarea, select {
   height: 0;
   padding: 0 10px;
   opacity: 0;
-}
-
-
-.c-field {
-  background-color: #edeff0;
-  padding: 15px;
-  width: 50%;
-  margin: auto;
-  border: 1px solid #e2e2e2;
-  border-radius: 2px;
-  margin-bottom: 15px;
-  cursor: pointer;
-}
-
-.c-field__subheading {
-  margin-bottom: 15px;
-}
-
-.c-field__display {
-  cursor: pointer;
-  float: left;
-}
-
-.c-field__label {
-  margin: 3px 10px;
 }
