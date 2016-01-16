@@ -1,9 +1,11 @@
 import _ from 'lodash'
+import storage from 'local-storage'
 
 const APP_KEY = '68fc29641c38d36e500e264a5c7e9ec0'
+const TRELLO_TOKEN = 'trello_token'
 
 Trello.setKey(APP_KEY);
-Trello.setToken(localStorage.getItem('trello_token'));
+Trello.setToken(storage.get(TRELLO_TOKEN));
 
 export default {
   authorize() {
