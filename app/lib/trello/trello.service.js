@@ -1,5 +1,5 @@
-import _ from 'lodash'
 import storage from 'local-storage'
+import _ from 'lodash'
 import Api from './api'
 
 const STORAGE_KEY = 'trello_data'
