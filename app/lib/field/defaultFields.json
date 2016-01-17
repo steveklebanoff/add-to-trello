@@ -1,0 +1,72 @@
+[
+  {
+    "component": "title",
+    "label": "Card Title",
+    "inputType": "text",
+    "position": 0,
+    "trelloField": "name",
+    "display": true,
+    "prefillOptions": {
+      "label": "Page Title",
+      "type": "chrome:page_title",
+      "allowedFields": ["text", "textarea"],
+      "value": ""
+    }
+  },
+  {
+    "component": "description",
+    "label": "Card Description",
+    "inputType": "textarea",
+    "position": 1,
+    "trelloField": "desc",
+    "display": true,
+    "prefillOptions": {
+      "label": "Page Url",
+      "type": "chrome:page_url",
+      "allowedFields": ["text", "textarea"],
+      "value": ""
+    }
+  },
+  {
+    "component": "due-date",
+    "label": "Due Date",
+    "inputType": "date",
+    "position": 2,
+    "trelloField": "due",
+    "display": true,
+    "prefillOptions": {
+      "label": "Nothing",
+      "type": "nothing",
+      "allowedFields": ["text", "textarea", "date", "select"],
+      "value": ""
+    }
+  },
+  {
+    "component": "board",
+    "label": "Board",
+    "inputType": "select",
+    "position": 3,
+    "trelloField": "",
+    "display": true,
+    "prefillOptions": {
+      "label": "Last Used",
+      "type": "select:last_used",
+      "allowedFields": ["select"],
+      "value": ""
+    }
+  },
+  {
+    "component": "list",
+    "label": "List",
+    "inputType": "select",
+    "position": 4,
+    "trelloField": "idList",
+    "display": true,
+    "prefillOptions": {
+      "label": "Last Used",
+      "type": "select:last_used",
+      "allowedFields": ["select"],
+      "value": ""
+    }
+  }
+]
