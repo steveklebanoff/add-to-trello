@@ -43,12 +43,15 @@ export default {
   },
 
   events: {
-    'form.update': function(val) {
+    'form.updated': function(val) {
       this.form = _.assign(this.form, val)
     },
     'board.updated': function(id) {
       this.$broadcast('board.updated', id)
     },
+    'fields.updated': function() {
+      fieldService.save(this.fields)
+    }
   },
 
   methods: {

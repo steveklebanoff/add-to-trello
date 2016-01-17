@@ -13,7 +13,7 @@ export default {
   watch: {
     formValue: function() {
       if (this.field.trelloField) {
-        this.$dispatch('form.update', { [this.field.trelloField]: this.formValue })
+        this.$dispatch('form.updated', { [this.field.trelloField]: this.formValue })
       }
     }
   },
