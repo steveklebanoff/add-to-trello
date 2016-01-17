@@ -3,7 +3,7 @@
   <label>{{ field.label }}</label>
 
   <select class="form-control"
-          v-model="field.prefillOptions.value">
+          v-model="field.prefillOptions.value" @change="listHasChanged">
     <option value="">Select a List</option>
     <option v-for="list in listDropdown" :value="list.id" v-show="boardId">
       {{ list.name }}
@@ -53,6 +53,11 @@ export default {
       TrelloService.getListDropdown(this.boardId, (dropdown) => {
         this.$set('listDropdown', dropdown)
       })
+    },
+    listHasChanged() {
+      if (this.field.prefillOptions.updateLastUsed()) {
+        this.$dispatch('fields.updated')
+      }
     }
   }
 }

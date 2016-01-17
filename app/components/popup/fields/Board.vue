@@ -36,7 +36,12 @@ export default {
 
   methods: {
     boardHasChanged(e) {
-      this.$dispatch('board.updated', e.target.value)
+      this.formValue = e.target.value
+      this.$dispatch('board.updated', this.formValue)
+      
+      if (this.field.prefillOptions.updateLastUsed()) {
+        this.$dispatch('fields.updated')
+      }
     }
   }
 }
