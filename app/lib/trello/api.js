@@ -43,7 +43,7 @@ export default {
 
   createCard(data) {
     return new Promise((resolve, reject) => {
-      data = _.assign({ due: null, idList: null, urlSource: 'http://www.google.com' }, data)
+      data = _.assign({ idList: null }, data)
       Trello.rest('POST', 'cards', data, resolve, reject);
     })
   }
