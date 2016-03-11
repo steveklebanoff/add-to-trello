@@ -24,6 +24,10 @@ export default {
     return Trello.authorized()
   },
 
+  deauthorize() {
+    return Trello.deauthorize()
+  },
+
   getOrganizations() {
     return new Promise((resolve, reject) => {
       Trello.rest('GET', 'members/me/organizations', (orgs) => {

@@ -55,5 +55,10 @@ export default {
 
       callback(listDropdown)
     })
+  },
+
+  logout() {
+    Api.deauthorize()
+    storage.clear()
   }
 }

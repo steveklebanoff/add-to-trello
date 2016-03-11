@@ -9,8 +9,8 @@
     <card-form></card-form>
 
     <div class="c-popup__options">
-      <a href="#" class="pull-left">Settings</a>
-      <a href="#" class="pull-right">Logout</a>
+      <a href="#" @click="openSettings()" class="pull-left">Settings</a>
+      <a href="#" @click="logout()" class="pull-right">Logout</a>
     </div>
 
   </div>
@@ -19,17 +19,29 @@
 
 <script>
 import Api from '../lib/trello/api'
+import TrelloService from '../lib/trello/trello.service'
 import CardForm from './popup/CardForm.vue'
 import Chrome from '../lib/chrome/chrome.service'
 
 export default {
 
   ready() {
-    if (! Api.authorized()) return Chrome.openSettingsPage()
+    if (! Api.authorized()) return this.openSettings()
   },
 
   components: {
     'card-form': CardForm
+  },
+
+  methods: {
+    openSettings() {
+      return Chrome.openSettingsPage()
+    },
+
+    logout() {
+      TrelloService.logout()
+      this.openSettings()
+    }
   }
 
 }
