@@ -38,7 +38,7 @@ export default {
     boardHasChanged(e) {
       this.formValue = e.target.value
       this.$dispatch('board.updated', this.formValue)
-      
+
       if (this.field.prefillOptions.updateLastUsed()) {
         this.$dispatch('fields.updated')
       }

@@ -11,6 +11,7 @@
   <div class="form-group">
     <button type="button" class="btn btn--green" @click="save">Save</button>
   </div>
+
 </form>
 </template>
 
@@ -57,12 +58,10 @@ export default {
   methods: {
     save() {
       Api.createCard(this.form)
-      .then((res) => {
-        console.log('success!');
-        console.log(res);
+      .then((card) => {
+        window.close();
       })
       .catch((err) => {
-        console.log('error!');
         console.log(err);
       })
     },
