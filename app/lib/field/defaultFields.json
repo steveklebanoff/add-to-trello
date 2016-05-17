@@ -33,7 +33,21 @@
     "inputType": "date",
     "position": 2,
     "trelloField": "due",
-    "display": true,
+    "display": false,
+    "prefillOptions": {
+      "label": "Nothing",
+      "type": "nothing",
+      "allowedFields": ["text", "textarea", "date", "select"],
+      "value": ""
+    }
+  },
+  {
+    "component": "position",
+    "label": "Position",
+    "inputType": "text",
+    "position": 3,
+    "trelloField": "pos",
+    "display": false,
     "prefillOptions": {
       "label": "Nothing",
       "type": "nothing",
@@ -45,7 +59,7 @@
     "component": "board",
     "label": "Board",
     "inputType": "select",
-    "position": 3,
+    "position": 4,
     "trelloField": "",
     "display": true,
     "prefillOptions": {
@@ -59,7 +73,7 @@
     "component": "list",
     "label": "List",
     "inputType": "select",
-    "position": 4,
+    "position": 5,
     "trelloField": "idList",
     "display": true,
     "prefillOptions": {

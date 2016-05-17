@@ -58,6 +58,7 @@ import Description from './fields/Description.vue'
 import DueDate from './fields/DueDate.vue'
 import Board from './fields/Board.vue'
 import List from './fields/List.vue'
+import Position from './fields/Position.vue'
 
 export default {
   mixins: [sortableMixin],
@@ -77,7 +78,8 @@ export default {
     'description': Description,
     'due-date': DueDate,
     'board': Board,
-    'list': List
+    'list': List,
+    'position': Position
   },
 
   events: {
