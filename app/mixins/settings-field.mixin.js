@@ -1,4 +1,4 @@
-import PrefillOptions from '../../../lib/field/prefillOptions.model'
+import PrefillOptions from '../lib/field/prefillOptions.model'
 
 /**
  * Configuration Field Mixin

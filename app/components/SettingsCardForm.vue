@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss">
-@import '../../shared';
+@import '../shared';
 
 .c-fields-form {
   width: 50%;
@@ -50,15 +50,15 @@
 import noty from 'noty'
 import _ from 'lodash'
 
-import sortableMixin from './fields/sortable.mixin'
-import fieldService from '../../lib/field/field.service'
+import sortableMixin from '../mixins/sortable.mixin'
+import fieldService from '../lib/field/field.service'
 
-import Title from './fields/Title.vue'
-import Description from './fields/Description.vue'
-import DueDate from './fields/DueDate.vue'
-import Board from './fields/Board.vue'
-import List from './fields/List.vue'
-import Position from './fields/Position.vue'
+import Title from './Title/TitleSettings.vue'
+import Description from './Description/DescriptionSettings.vue'
+import DueDate from './DueDate/DueDateSettings.vue'
+import Board from './Board/BoardSettings.vue'
+import List from './List/ListSettings.vue'
+import Position from './Position/PositionSettings.vue'
 
 export default {
   mixins: [sortableMixin],

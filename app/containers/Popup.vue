@@ -20,7 +20,7 @@
 <script>
 import Api from '../lib/trello/api'
 import TrelloService from '../lib/trello/trello.service'
-import CardForm from './popup/CardForm.vue'
+import CardForm from '../components/PopupCardForm.vue'
 import Chrome from '../lib/chrome/chrome.service'
 
 export default {

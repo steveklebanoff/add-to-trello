@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import fieldMixin from './field.mixin'
+import fieldMixin from '../../mixins/settings-field.mixin'
 
 export default {
   mixins: [fieldMixin],

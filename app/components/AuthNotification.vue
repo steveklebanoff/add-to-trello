@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Api from '../../lib/trello/api'
+import Api from '../lib/trello/api'
 
 export default {
   data() {

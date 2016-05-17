@@ -16,10 +16,10 @@
 </template>
 
 <script>
-import Jumbotron from './settings/Jumbotron.vue'
-import AuthNotification from './settings/AuthNotification.vue'
-import FieldsForm from './settings/FieldsForm.vue'
-import FooterLinks from './settings/FooterLinks.vue'
+import Jumbotron from '../components/Jumbotron.vue'
+import AuthNotification from '../components/AuthNotification.vue'
+import FieldsForm from '../components/SettingsCardForm.vue'
+import FooterLinks from '../components/FooterLinks.vue'
 
 export default {
 

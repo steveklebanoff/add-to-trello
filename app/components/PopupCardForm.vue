@@ -17,14 +17,14 @@
 
 <script>
 import _ from 'lodash'
-import fieldService from '../../lib/field/field.service'
-import Api from '../../lib/trello/api'
+import fieldService from '../lib/field/field.service'
+import Api from '../lib/trello/api'
 
-import Board from './fields/Board.vue'
-import List from './fields/List.vue'
-import Title from './fields/Title.vue'
-import Description from './fields/Description.vue'
-import DueDate from './fields/DueDate.vue'
+import Board from './Board/BoardPopup.vue'
+import List from './List/ListPopup.vue'
+import Title from './Title/TitlePopup.vue'
+import Description from './Description/DescriptionPopup.vue'
+import DueDate from './DueDate/DueDatePopup.vue'
 
 export default {
 

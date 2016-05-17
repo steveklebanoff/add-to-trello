@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import fieldMixin from './field.mixin'
-import TrelloService from '../../../lib/trello/trello.service'
+import fieldMixin from '../../mixins/settings-field.mixin'
+import TrelloService from '../../lib/trello/trello.service'
 
 export default {
   mixins: [fieldMixin],

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import fieldMixin from './field.mixin'
+import fieldMixin from '../../mixins/popup-field.mixin'
 
 export default {
   mixins: [fieldMixin]
