@@ -58,7 +58,7 @@ import Description from './Description/DescriptionSettings.vue'
 import DueDate from './DueDate/DueDateSettings.vue'
 import Board from './Board/BoardSettings.vue'
 import List from './List/ListSettings.vue'
-import Position from './Position/PositionSettings.vue'
+// import Position from './Position/PositionSettings.vue'
 
 export default {
   mixins: [sortableMixin],
@@ -78,8 +78,8 @@ export default {
     'description': Description,
     'due-date': DueDate,
     'board': Board,
-    'list': List,
-    'position': Position
+    'list': List
+    // 'position': Position
   },
 
   events: {
