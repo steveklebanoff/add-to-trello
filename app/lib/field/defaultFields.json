@@ -42,20 +42,6 @@
     }
   },
   {
-    "component": "position",
-    "label": "Position",
-    "inputType": "text",
-    "position": 3,
-    "trelloField": "pos",
-    "display": false,
-    "prefillOptions": {
-      "label": "Nothing",
-      "type": "nothing",
-      "allowedFields": ["text", "textarea", "date", "select"],
-      "value": ""
-    }
-  },
-  {
     "component": "board",
     "label": "Board",
     "inputType": "select",
