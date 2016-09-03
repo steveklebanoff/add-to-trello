@@ -1,3 +1,21 @@
+
+function showAlert(alertType, alertText) {
+  $('.add-card-form').hide();
+  $('.form-alerts .alert').hide();
+  return $(`.form-alerts .alert-${alertType}`).html(alertText).show();
+}
+
+function showSuccess(cardData) {
+  var cardLink = $('<a />');
+  cardLink.attr('href', cardData.shortUrl);
+  cardLink.text('View card');
+
+  var $alertEl = showAlert('success', 'Card saved! ').append(cardLink);
+  bindLinks($alertEl);
+
+  window.setTimeout(window.close, 2500);
+}
+
 $(function() {
 
 // ---------- Initialization ---------- //
@@ -42,19 +60,18 @@ $(function() {
             storage.setDefaults(data['board'], data['list']);
         }
 
-        showSaving('Saving card&hellip;');
+        showAlert('info', 'Saving card&hellip;');
         api.submitCard(data, (cardData) => {
           executeScript("var imgEl = document.querySelector('.gallery img'); imgEl && imgEl.getAttribute('src');", (imgResults) => {
             var imgUrl = imgResults && imgResults[0];
             if (imgUrl) {
-              showSaving('Saving image&hellip;');
+              showAlert('info', 'Saving image&hellip;');
               // has image, add attachment
               api.addAttachment(cardData.id, imgUrl, () => {
-                window.close();
+                showSuccess(cardData);
               });
             } else {
-              // no image, just close
-              window.close();
+              showSuccess(cardData);
             }
           })
         });
@@ -81,7 +98,9 @@ function getCurrentTab(callback) {
 function executeScript(code, callback) {
   getCurrentTab(function(tab) {
       window.chrome.tabs.executeScript(
-        tab.id, { code: code }, callback
+        tab.id, { code: code }, (res) => {
+          callback(res, tab);
+        }
       );
   })
 }
@@ -103,13 +122,15 @@ function initForms() {
 
     executeScript(
       '[].slice.call(document.querySelectorAll("span#titletextonly, span.price")).map((x) => { return x.textContent; }).join(" - ")',
-      (titleAndCost) => {
-        title.val(titleAndCost);
+      (titleAndCostVars, tab) => {
+        var titleAndCost = titleAndCostVars && titleAndCostVars[0];
+        if (titleAndCost !== '') {
+          title.val(titleAndCost);
+        } else {
+          title.val(tab.title);
+        }
+        description.text(tab.url);
       }
     )
-
-    getCurrentTab(function(tab) {
-        description.text(tab.url);
-    })
 
 }

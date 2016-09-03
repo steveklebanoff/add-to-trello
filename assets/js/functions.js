@@ -6,6 +6,12 @@ function openTrello() {
     chrome.tabs.create({ url: 'https://trello.com' });
 }
 
+function bindLinks($el) {
+  $el.find('a').click(function () {
+    chrome.tabs.create({url: this.getAttribute('href')});
+  });
+}
+
 function serialize(form) {
     var formData = form.serializeArray();
     var formObj  = {};
@@ -15,11 +21,6 @@ function serialize(form) {
     });
 
     return formObj;
-}
-
-function showSaving(savingText) {
-  $('.js-submit, .js-alert').hide();
-  $('.js-saving').html(savingText).show();
 }
 
 /**
