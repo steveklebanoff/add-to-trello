@@ -1,7 +1,7 @@
 **Goal**: Chrome extension to add items from Craigslist to Trello
 
 ### Tasks
-- [ ] Automatically populate title with price
+- [x] Automatically populate title with price
 - [ ] Automatically upload attachment photo
   - [ ] Make sure it works when there are no photos
 - [x] Remove "Card Title" and "Description" settings
