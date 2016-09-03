@@ -12,6 +12,7 @@
 - [x] Use custom API key
 - [ ] Update Donations and Credits on Settings
 - [ ] Update Icon
+- [ ] Update manifest
 
 ### Nice To Have
 - [ ] Handle errors better
