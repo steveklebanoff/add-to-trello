@@ -1,4 +1,19 @@
-Chrome extension to add items from Craigslist to Trello
+## Chrome Extension: Add items from Craigslist to Trello
+
+Based on the wonderful [walteranderson/add-to-trello](https://github.com/walteranderson/add-to-trello) extension, but with the improvements for Craigslist:
+
+- Includes Craigslist price in title
+- Automatically adds image from Craigslist post
+
+And a few general improvements:
+- Adds a "Saving..." state
+- Link to view card after added
+
+You can also use the extension to add non-craigslist pages as well.
+
+### See It In Action
+
+![image](https://s14.postimg.io/ivu8lniv5/out6.gif)
 
 ### How To Develop
 - `npm install -g bower`
