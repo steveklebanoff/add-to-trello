@@ -321,18 +321,26 @@ var api = (function() {
      * submit the form and send the new card to the Trello API
      *
      */
-    var submitCard = function(data) {
+    var submitCard = function(data, onSuccess) {
         Trello.rest('POST', 'cards', {
             name: data['card-title'],
             desc: data['card-description'],
             date: null,
             idList: data['list'],
             urlSource: null
-        }, function(success) {
-            // close the window on success
-            window.close();
-        }, _apiError);
+        }, onSuccess, _apiError);
     };
+
+    /**
+     * addAttachemnt
+     * adds URL attachemnt to card
+     *
+     */
+    var addAttachment = function(cardId, url, onSuccess) {
+      Trello.rest('POST', `cards/${cardId}/attachments`, {
+          url: url
+      }, onSuccess, _apiError);
+    }
 
     /**
      * authorize
@@ -391,7 +399,8 @@ var api = (function() {
         getOrgsAndBoards: getOrgsAndBoards,
         getBoards: getBoards,
         getOrgs: getOrgs,
-        submitCard: submitCard
+        submitCard: submitCard,
+        addAttachment: addAttachment
     }
 }());
 

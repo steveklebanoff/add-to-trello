@@ -42,7 +42,20 @@ $(function() {
             storage.setDefaults(data['board'], data['list']);
         }
 
-        api.submitCard(data);
+        api.submitCard(data, (cardData) => {
+          executeScript("var imgEl = document.querySelector('.gallery img'); imgEl && imgEl.getAttribute('src');", (imgResults) => {
+            var imgUrl = imgResults && imgResults[0];
+            if (imgUrl) {
+              // has image, add attachment
+              api.addAttachment(cardData.id, imgUrl, () => {
+                window.close();
+              });
+            } else {
+              // no image, just close
+              window.close();
+            }
+          })
+        });
     });
 });
 
@@ -63,6 +76,14 @@ function getCurrentTab(callback) {
     });
 }
 
+function executeScript(code, callback) {
+  getCurrentTab(function(tab) {
+      window.chrome.tabs.executeScript(
+        tab.id, { code: code }, callback
+      );
+  })
+}
+
 /**
  * initialize selected form inputs based on settings
  */
@@ -77,15 +98,16 @@ function initForms() {
         board.prop('selected', true);
         list.prop('selected', true);
     }
-    
+
+    executeScript(
+      '[].slice.call(document.querySelectorAll("span#titletextonly, span.price")).map((x) => { return x.textContent; }).join(" - ")',
+      (titleAndCost) => {
+        title.val(titleAndCost);
+      }
+    )
+
     getCurrentTab(function(tab) {
-        window.chrome.tabs.executeScript(
-          tab.id,
-          { code: '[].slice.call(document.querySelectorAll("span#titletextonly, span.price")).map((x) => { return x.textContent; }).join(" - ")'},
-          (titleAndCost) => {
-            title.val(titleAndCost);
-          }
-        );
         description.text(tab.url);
     })
+
 }
