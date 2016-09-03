@@ -18,23 +18,8 @@ $(function() {
 
         var form = serialize($(this));
         var data = {
-            title: form.title,
-            description: form.description,
-            boardList: form.boardList,
-            titleValue: '',
-            descriptionValue: ''
+            boardList: form.boardList
         };
-
-        // add defined title value if necessary
-        if (form.title == 'defined') {
-            data.titleValue = form.titleValue;
-        }
-
-        // add defined description value if necessary
-        if (form.description == 'defined') {
-            data.descriptionValue = form.descriptionValue;
-        }
-
         // save main settings data
         storage.setSettings(data);
 
