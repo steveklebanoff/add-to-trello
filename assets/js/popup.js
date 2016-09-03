@@ -98,7 +98,9 @@ function getCurrentTab(callback) {
 function executeScript(code, callback) {
   getCurrentTab(function(tab) {
       window.chrome.tabs.executeScript(
-        tab.id, { code: code }, callback
+        tab.id, { code: code }, (res) => {
+          callback(res, tab);
+        }
       );
   })
 }
@@ -120,13 +122,15 @@ function initForms() {
 
     executeScript(
       '[].slice.call(document.querySelectorAll("span#titletextonly, span.price")).map((x) => { return x.textContent; }).join(" - ")',
-      (titleAndCost) => {
-        title.val(titleAndCost);
+      (titleAndCostVars, tab) => {
+        var titleAndCost = titleAndCostVars && titleAndCostVars[0];
+        if (titleAndCost !== '') {
+          title.val(titleAndCost);
+        } else {
+          title.val(tab.title);
+        }
+        description.text(tab.url);
       }
     )
-
-    getCurrentTab(function(tab) {
-        description.text(tab.url);
-    })
 
 }
