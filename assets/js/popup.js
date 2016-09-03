@@ -120,8 +120,16 @@ function initForms() {
         list.prop('selected', true);
     }
 
+    var clTitle = document.querySelector("span#titletextonly") && document.querySelector("span#titletextonly").textContent
+    var clPrice = document.querySelector("span.price") && document.querySelector("span.price").textContent
+
+    (clTitle && clPrice) ? `clPrice - clTitle` : ''
+
     executeScript(
-      '[].slice.call(document.querySelectorAll("span#titletextonly, span.price")).map((x) => { return x.textContent; }).join(" - ")',
+      "var isCl = document.domain == 'craigslist.org'; \
+       var clTitle = document.querySelector('.postingtitle span#titletextonly') && document.querySelector('.postingtitle span#titletextonly').textContent; \
+       var clPrice = document.querySelector('.postingtitle span.price') && document.querySelector('.postingtitle span.price').textContent; \
+       (isCl && clTitle && clPrice) ? `${clPrice} - ${clTitle}` : '';",
       (titleAndCostVars, tab) => {
         var titleAndCost = titleAndCostVars && titleAndCostVars[0];
         if (titleAndCost !== '') {
