@@ -19,7 +19,9 @@ You can also use the extension to add non-craigslist pages as well.
 ![image](https://s14.postimg.io/ivu8lniv5/out6.gif)
 
 ### How To Develop
-If you'd just like to use the extension, please install from [Chrome Store]((https://chrome.google.com/webstore/detail/craigslist-to-trello/fleimhcipmfmdmhafmdjnpbhaanhomdo)).  But, if you'd like to hack on the extension, follow directions below:
+Looking for something to hack on?  [Check out the issues page](https://github.com/steveklebanoff/chrome-craigslist-to-trello/issues).
+
+If you'd just like to use the extension, please install from [Chrome Store](https://chrome.google.com/webstore/detail/craigslist-to-trello/fleimhcipmfmdmhafmdjnpbhaanhomdo).  But, if you'd like to hack on the extension, follow directions below.
 - `npm install -g bower`
 - clone this repo and cd into it
 - copy `assets/js/key.js.tmpl` to `assets/js/key.js` and update with key from https://trello.com/app-key
@@ -28,6 +30,7 @@ If you'd just like to use the extension, please install from [Chrome Store]((htt
 - Enable "Developer Tools"
 - Click "Load unpacked extension.."
 - Select directory of this repo
+
 
 ### MVP Roadmap
 - [x] Automatically populate title with price
@@ -42,10 +45,3 @@ If you'd just like to use the extension, please install from [Chrome Store]((htt
 - [x] Update Donations and Credits on Settings
 - [x] Update Icon
 - [x] Update manifest
-
-### Nice To Have
-- [ ] Handle errors better
-- [ ] Populate contact information
-- [ ] Maybe Price should be tagged in more clear way? (beginning of title?)
-- [ ] Show Image Preview
-- [ ] Selectable Image Preview
