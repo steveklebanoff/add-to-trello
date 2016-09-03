@@ -62,7 +62,7 @@ $(function() {
 
         showAlert('info', 'Saving card&hellip;');
         api.submitCard(data, (cardData) => {
-          executeScript("var imgEl = document.querySelector('.gallery img'); imgEl && imgEl.getAttribute('src');", (imgResults) => {
+          executeScript("card_image", (imgResults) => {
             var imgUrl = imgResults && imgResults[0];
             if (imgUrl) {
               showAlert('info', 'Saving image&hellip;');
@@ -95,10 +95,10 @@ function getCurrentTab(callback) {
     });
 }
 
-function executeScript(code, callback) {
+function executeScript(fileName, callback) {
   getCurrentTab(function(tab) {
       window.chrome.tabs.executeScript(
-        tab.id, { code: code }, (res) => {
+        tab.id, { file: `assets/js/tab/${fileName}.js` }, (res) => {
           callback(res, tab);
         }
       );
@@ -120,16 +120,8 @@ function initForms() {
         list.prop('selected', true);
     }
 
-    var clTitle = document.querySelector("span#titletextonly") && document.querySelector("span#titletextonly").textContent
-    var clPrice = document.querySelector("span.price") && document.querySelector("span.price").textContent
-
-    (clTitle && clPrice) ? `clPrice - clTitle` : ''
-
     executeScript(
-      "var isCl = document.domain == 'craigslist.org'; \
-       var clTitle = document.querySelector('.postingtitle span#titletextonly') && document.querySelector('.postingtitle span#titletextonly').textContent; \
-       var clPrice = document.querySelector('.postingtitle span.price') && document.querySelector('.postingtitle span.price').textContent; \
-       (isCl && clTitle && clPrice) ? `${clPrice} - ${clTitle}` : '';",
+      'card_title',
       (titleAndCostVars, tab) => {
         var titleAndCost = titleAndCostVars && titleAndCostVars[0];
         if (titleAndCost !== '') {
