@@ -5,11 +5,12 @@
 - [ ] Automatically upload attachment photo
   - [ ] Make sure it works when there are no photos
 - [x] Remove "Card Title" and "Description" settings
+- [ ] Populate contact information
 - [ ] Gracefully handle not being on craigslist item page
 - [ ] Use custom API key
 - [ ] Update Donations and Credits on Settings
 - [ ] Update Icon
-- [ ] Make manifest permissions more granular
+- [x] Make manifest permissions more granular
 
 ### How To Develop
 - `npm install -g bower`
