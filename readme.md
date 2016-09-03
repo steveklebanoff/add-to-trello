@@ -6,6 +6,7 @@
   - [ ] Make sure it works when there are no photos
 - [ ] Remove "Card Title" and "Description" settings
 - [ ] Use custom API key
+- [ ] Update Donations and Credits on Settings
 
 ### How To Develop
 - `npm install -g bower`
