@@ -355,7 +355,7 @@ var api = (function() {
      */
     var authorize = function(success, error) {
         Trello.authorize({
-            name: 'Add to Trello',
+            name: 'Craigslist to Trello',
             expiration: 'never',
             scope: { read: true, write: true, account: false },
             success: success,
