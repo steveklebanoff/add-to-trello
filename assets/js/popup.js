@@ -78,16 +78,9 @@ function initForms() {
         list.prop('selected', true);
     }
 
-    // use as-defined if set
-    if (settings.title == 'defined') title.val(settings.titleValue);
-    if (settings.description == 'defined') description.val(settings.descriptionValue);
 
-
-    // get the current tab info and insert into the form, if necessary
-    if (settings.title == 'page' || settings.description == 'url') {
-        getCurrentTab(function(tab) {
-            if (settings.title == 'page') title.val(tab.title);
-            if (settings.description == 'url') description.text(tab.url);
-        });
-    }
+    getCurrentTab(function(tab) {
+        title.val(tab.title);
+        description.text(tab.url);
+    })
 }
