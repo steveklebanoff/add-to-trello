@@ -1,8 +1,17 @@
-# Add to Trello
+**Goal**: Chrome extension to add items from Craigslist to Trello
 
-A chrome extension to make it easier to add cards to Trello from your browser.
+### Tasks
+- [ ] Automatically populate title with price
+- [ ] Automatically upload attachment photo
+  - [ ] Make sure it works when there are no photos
+- [ ] Remove "Card Title" and "Description" settings
+- [ ] Use custom API key
 
-## Download
-
-You can download it on the
-[Chrome Web Store](https://chrome.google.com/webstore/detail/add-to-trello/engmocckoohpopiacajolojeobefbcec)
+### How To Develop
+- `npm install -g bower`
+- clone this repo and cd into it
+- `bower install`
+- Go to http://chrome://extensions
+- Enable "Developer Tools"
+- Click "Load unpacked extension.."
+- Select directory of this repo
