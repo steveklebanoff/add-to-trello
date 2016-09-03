@@ -43,6 +43,7 @@ body {
     padding: 8px 0;
     position: relative;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .sub_description {

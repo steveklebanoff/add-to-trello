@@ -1,25 +1,4 @@
-**In development**: Chrome extension to add items from Craigslist to Trello
-
-### MVP
-- [x] Automatically populate title with price
-- [x] Automatically upload attachment photo
-  - [x] Make sure it works when there are no photos
-- [x] Remove "Card Title" and "Description" settings
-- [x] Add loading... state
-- [x] Gracefully handle not being on craigslist item page
-- [x] Successful save notification
-- [x] Make manifest permissions more granular
-- [x] Use custom API key
-- [ ] Update Donations and Credits on Settings
-- [ ] Update Icon
-- [ ] Update manifest
-
-### Nice To Have
-- [ ] Handle errors better
-- [ ] Populate contact information
-- [ ] Maybe Price should be tagged in more clear way? (beginning of title?)
-- [ ] Show Image Preview
-- [ ] Selectable Image Preview
+Chrome extension to add items from Craigslist to Trello
 
 ### How To Develop
 - `npm install -g bower`
@@ -30,3 +9,24 @@
 - Enable "Developer Tools"
 - Click "Load unpacked extension.."
 - Select directory of this repo
+
+### MVP Roadmap
+- [x] Automatically populate title with price
+- [x] Automatically upload attachment photo
+  - [x] Make sure it works when there are no photos
+- [x] Remove "Card Title" and "Description" settings
+- [x] Add loading... state
+- [x] Gracefully handle not being on craigslist item page
+- [x] Successful save notification
+- [x] Make manifest permissions more granular
+- [x] Use custom API key
+- [x] Update Donations and Credits on Settings
+- [x] Update Icon
+- [x] Update manifest
+
+### Nice To Have
+- [ ] Handle errors better
+- [ ] Populate contact information
+- [ ] Maybe Price should be tagged in more clear way? (beginning of title?)
+- [ ] Show Image Preview
+- [ ] Selectable Image Preview
