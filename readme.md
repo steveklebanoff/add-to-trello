@@ -7,6 +7,7 @@
 - [ ] Remove "Card Title" and "Description" settings
 - [ ] Use custom API key
 - [ ] Update Donations and Credits on Settings
+- [ ] Update Icon
 
 ### How To Develop
 - `npm install -g bower`
