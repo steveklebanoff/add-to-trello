@@ -9,7 +9,7 @@
 - [x] Gracefully handle not being on craigslist item page
 - [x] Successful save notification
 - [x] Make manifest permissions more granular
-- [ ] Use custom API key
+- [x] Use custom API key
 - [ ] Update Donations and Credits on Settings
 - [ ] Update Icon
 
@@ -23,6 +23,7 @@
 ### How To Develop
 - `npm install -g bower`
 - clone this repo and cd into it
+- copy `assets/js/key.js.tmpl` to `assets/js/key.js` and update with key from https://trello.com/app-key
 - `bower install`
 - Go to http://chrome://extensions
 - Enable "Developer Tools"
