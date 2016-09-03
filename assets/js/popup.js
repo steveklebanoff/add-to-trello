@@ -42,10 +42,12 @@ $(function() {
             storage.setDefaults(data['board'], data['list']);
         }
 
+        showSaving('Saving card&hellip;');
         api.submitCard(data, (cardData) => {
           executeScript("var imgEl = document.querySelector('.gallery img'); imgEl && imgEl.getAttribute('src');", (imgResults) => {
             var imgUrl = imgResults && imgResults[0];
             if (imgUrl) {
+              showSaving('Saving image&hellip;');
               // has image, add attachment
               api.addAttachment(cardData.id, imgUrl, () => {
                 window.close();

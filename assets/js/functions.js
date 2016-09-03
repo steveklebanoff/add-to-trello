@@ -17,6 +17,11 @@ function serialize(form) {
     return formObj;
 }
 
+function showSaving(savingText) {
+  $('.js-submit, .js-alert').hide();
+  $('.js-saving').html(savingText).show();
+}
+
 /**
  * loadBoardsAndLists
  * pulls data from localStorage and inserts the board and list dropdowns
