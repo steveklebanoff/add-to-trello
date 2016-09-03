@@ -2,8 +2,8 @@
 
 ### Tasks
 - [x] Automatically populate title with price
-- [ ] Automatically upload attachment photo
-  - [ ] Make sure it works when there are no photos
+- [x] Automatically upload attachment photo
+  - [x] Make sure it works when there are no photos
 - [x] Remove "Card Title" and "Description" settings
 - [ ] Add loading... state
 - [ ] Populate contact information
