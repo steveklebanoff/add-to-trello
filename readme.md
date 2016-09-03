@@ -9,6 +9,7 @@
 - [ ] Use custom API key
 - [ ] Update Donations and Credits on Settings
 - [ ] Update Icon
+- [ ] Make manifest permissions more granular
 
 ### How To Develop
 - `npm install -g bower`
