@@ -12,7 +12,7 @@
 - [ ] Use custom API key
 - [ ] Update Donations and Credits on Settings
 - [ ] Update Icon
-- [ ] Successful save notification
+- [x] Successful save notification
 - [x] Make manifest permissions more granular
 
 ### How To Develop
