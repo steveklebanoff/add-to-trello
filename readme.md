@@ -8,6 +8,8 @@
 - [x] Add loading... state
 - [ ] Handle errors better
 - [ ] Populate contact information
+- [ ] Show Image Preview
+- [ ] Selectable Image Preview
 - [ ] Gracefully handle not being on craigslist item page
 - [ ] Use custom API key
 - [ ] Update Donations and Credits on Settings
