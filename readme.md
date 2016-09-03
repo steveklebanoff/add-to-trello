@@ -6,6 +6,7 @@ Based on the wonderful [walteranderson/add-to-trello](https://github.com/waltera
 - Automatically adds image from Craigslist post
 
 And a few general improvements:
+- Adds to top of board instead of bottom
 - Adds a "Saving..." state
 - Link to view card after added
 
