@@ -77,10 +77,15 @@ function initForms() {
         board.prop('selected', true);
         list.prop('selected', true);
     }
-
-
+    
     getCurrentTab(function(tab) {
-        title.val(tab.title);
+        window.chrome.tabs.executeScript(
+          tab.id,
+          { code: '[].slice.call(document.querySelectorAll("span#titletextonly, span.price")).map((x) => { return x.textContent; }).join(" - ")'},
+          (titleAndCost) => {
+            title.val(titleAndCost);
+          }
+        );
         description.text(tab.url);
     })
 }

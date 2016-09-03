@@ -14,7 +14,9 @@
     },
     "permissions": [
         "tabs",
-        "https://api.trello.com/"
+        "https://api.trello.com/",
+        "http://*.craigslist.org/*",
+        "https://*.craigslist.org/*"
     ],
     "web_accessible_resources": [
         "settings.html"
