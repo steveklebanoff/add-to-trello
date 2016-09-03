@@ -12,14 +12,14 @@ And a few general improvements:
 
 You can also use the extension to add non-craigslist pages as well.
 
-**Install from [Chrome Store](https://chrome.google.com/webstore/detail/craigslist-to-trello/lfmjhdndgoagejlhcnmnmjhkechnefmk)**
+**Install from [Chrome Store](https://chrome.google.com/webstore/detail/craigslist-to-trello/fleimhcipmfmdmhafmdjnpbhaanhomdo)**
 
 ### See It In Action
 
 ![image](https://s14.postimg.io/ivu8lniv5/out6.gif)
 
 ### How To Develop
-If you'd just like to use the extension, please install from [Chrome Store](https://chrome.google.com/webstore/detail/craigslist-to-trello/lfmjhdndgoagejlhcnmnmjhkechnefmk).  But, if you'd like to hack on the extension, follow directions below:
+If you'd just like to use the extension, please install from [Chrome Store]((https://chrome.google.com/webstore/detail/craigslist-to-trello/fleimhcipmfmdmhafmdjnpbhaanhomdo)).  But, if you'd like to hack on the extension, follow directions below:
 - `npm install -g bower`
 - clone this repo and cd into it
 - copy `assets/js/key.js.tmpl` to `assets/js/key.js` and update with key from https://trello.com/app-key
