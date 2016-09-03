@@ -333,7 +333,8 @@ var api = (function() {
             desc: data['card-description'],
             date: null,
             idList: data['list'],
-            urlSource: null
+            urlSource: null,
+            pos: 'top'
         }, onSuccess, _apiError);
     };
 
